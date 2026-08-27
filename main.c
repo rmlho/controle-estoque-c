@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAX_PRODUTOS 200
 #define MAX_CATEGORIAS 6
@@ -280,11 +281,17 @@ void menuRelatorios(struct Produto estoque[], int total) {
 }
 
 int validarNome(char nome[]) {
-    if (nome[0] == '\0') {
+    if (nome == NULL) {
         return 0;
-    } 
+    }
 
-    return 1;
+    for (int i = 0; nome[i] != '\0'; i++) {
+        if (isalpha(nome[i])) { 
+            return 1; 
+        }
+    }
+  
+    return 0; 
 }
 
 int validarCodigo(int codigo) {
@@ -396,13 +403,15 @@ void cadastrarProduto(struct Produto estoque[], int *total) {
         printf("Erro: codigo ja cadastrado!\n");
         return;
     }
+    
+    while (getchar() != '\n');
 
     printf("Nome: ");
-    scanf(" %99[^\n]", nome);
+    fgets(nome, 100, stdin);
 
     if (!validarNome(nome)) {
         printf("Erro: nome nao pode ser vazio!\n");
-        return;
+        return; // Ou voltar para o menu
     }
 
     printf("Categoria (codigo numerico): ");
