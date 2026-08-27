@@ -393,6 +393,7 @@ void cadastrarProduto(struct Produto estoque[], int *total) {
 
     printf("Codigo de 4 digitos: ");
     scanf("%d", &codigo);
+    while (getchar() != '\n');
 
     if (!validarCodigo(codigo)) {
         printf("Erro: coódigo deve ter 4 digitos!\n");
@@ -403,8 +404,6 @@ void cadastrarProduto(struct Produto estoque[], int *total) {
         printf("Erro: codigo ja cadastrado!\n");
         return;
     }
-    
-    while (getchar() != '\n');
 
     printf("Nome: ");
     fgets(nome, 100, stdin);
