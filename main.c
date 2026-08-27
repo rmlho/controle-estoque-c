@@ -193,7 +193,7 @@ void exibirMenu(void) {
     printf("\n[9] Registrar saída");
     printf("\n[10] Consultar produtos com estoque abaixo do mínimo");
     printf("\n[11] Consultar produtos sem estoque");
-    printf("\n[12] Consultar produtos temporariamente indisponíveis");
+    printf("\n[12] Consultar produtos por situação");
     printf("\n[13] Apresentar relatórios");
     printf("\n[14] Salvar as informações");
     printf("\n[15] Recuperar as informações armazenadas anteriormente");
