@@ -440,6 +440,8 @@ void cadastrarProduto(struct Produto estoque[], int *total) {
 
     printf("Valor unitario: ");
     scanf("%f", &valorUnitario);
+    while (getchar() != '\n');
+
 
     if (!validarValorUnitario(valorUnitario)) {
         printf("Erro: valor unitario deve ser maior que zero!\n");
