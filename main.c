@@ -71,11 +71,6 @@ void carregarDados(struct Produto estoque[], int *total);
 
 //Funções de relatórios do sistema:
 void relatorioGeral(struct Produto estoque[], int total);
-void relatorioAbaixoDoMinimo(struct Produto estoque[], int total);
-void relatorioSemEstoque(struct Produto estoque[], int total);
-void relatorioPorNome(struct Produto estoque[], int total);
-void relatorioPorQuantidade(struct Produto estoque[], int total);
-void relatorioPorValor(struct Produto estoque[], int total);
 void relatorioValorPorProduto(struct Produto estoque[], int total);
 void relatorioValorTotalEstoque(struct Produto estoque[], int total);
 void relatorioMaiorValorUnitario(struct Produto estoque[], int total);
@@ -238,23 +233,23 @@ void menuRelatorios(struct Produto estoque[], int total) {
                 break;
                 
             case 2:
-                relatorioAbaixoDoMinimo(estoque, total);
+                listarAbaixoDoMinimo(estoque, total);
                 break;
 
             case 3:
-                relatorioSemEstoque(estoque, total);
+                listarSemEstoque(estoque, total);
                 break;
 
             case 4:
-                relatorioPorNome(estoque, total);
+                ordenarPorNome(estoque, total);
                 break;
 
             case 5:
-                relatorioPorQuantidade(estoque, total);
+                ordenarPorQuantidade(estoque, total);
                 break;
 
             case 6:
-                relatorioPorValor(estoque, total);
+                ordenarPorValor(estoque, total);
                 break;
 
             case 7:
@@ -1096,26 +1091,6 @@ void relatorioGeral(struct Produto estoque[], int total) {
                estoque[i].valorUnitario, estoque[i].situacao);
     }
     printf("-------------------------\n");
-}
-
-void relatorioAbaixoDoMinimo(struct Produto estoque[], int total) {
-    listarAbaixoDoMinimo(estoque, total);
-}
-
-void relatorioSemEstoque(struct Produto estoque[], int total) {
-    listarSemEstoque(estoque, total);
-}
-
-void relatorioPorNome(struct Produto estoque[], int total) {
-    ordenarPorNome(estoque, total);
-}
-
-void relatorioPorQuantidade(struct Produto estoque[], int total) {
-    ordenarPorQuantidade(estoque, total);
-}
-
-void relatorioPorValor(struct Produto estoque[], int total) {
-    ordenarPorValor(estoque, total);
 }
 
 void relatorioValorPorProduto(struct Produto estoque[], int total) {
