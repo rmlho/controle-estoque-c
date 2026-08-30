@@ -22,7 +22,7 @@ Sistema de estoque usando linguagem C para armazenar, atualizar, consultar e rem
 - Manipulação de arquivos (persistência)
 
 ---
-![Demonstração do sistema](caminho/para/seu.gif)
+![Demonstração do sistema](assets/demo.gif)
 ---
 ## Dependências
 
